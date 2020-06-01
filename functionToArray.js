@@ -9,6 +9,9 @@ const dog = {
   firstName: "Benji",
   lastName: "Burlybottom",
   toys: ["Amazon delivery", "Pink Torn teddy bear"],
+  bark: function () {
+    return "Bork";
+  },
 };
 
 // To read value associated to a key in an object
@@ -96,3 +99,52 @@ console.log("Iterating over an object");
 for (let key in dog) {
   console.log("key: ", key, " value: ", dog[key]);
 }
+
+console.log(dog.bark());
+console.log("==============================");
+
+// Methods
+function add(x, y) {
+  return x + y;
+}
+
+// We can set functions to variables and run them by triggering
+// those variables and passing down the necessary arguments
+const addTwoNumbers = add;
+console.log(addTwoNumbers(13, 19)); // 32
+
+function printing() {
+  console.log(
+    `name: ${person.name}, age: ${person.age}, EyeColor: ${person.features.eyeColor}`
+  );
+}
+const person = {
+  name: "John",
+  age: 28,
+  isEngineer: true,
+  skills: ["drive", "fly", "programming"],
+  features: {
+    eyeColor: "grey",
+    height: "5'11",
+    weight: "167lbs",
+  },
+  printPerson: printing,
+};
+
+person.printPerson();
+
+const newDoggo = {
+  name: "Pixy",
+  age: 3,
+  color: "white",
+  // sleep: function () {
+  //   console.log("Zzzzzzz.....");
+  // },
+  // The syntax sugar for the above method
+  // is
+  sleep() {
+    console.log("Zzzzzzz.....");
+  },
+};
+
+newDoggo.sleep();

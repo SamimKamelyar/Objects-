@@ -38,4 +38,4 @@ for (let i = 0; i < words.length; i++) {
     (counterObject[words[i]] = 1);
 }
 
-console.log(counterObject);
+console.log(counterObject);  
